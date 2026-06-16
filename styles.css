@@ -1,0 +1,242 @@
+/* ===== GABRIELA REIS - CUSTOM STYLES (CSS1) ===== */
+
+/* Font Family */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.masthead-heading,
+.masthead-subheading,
+.page-section-heading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== NAVIGATION ===== */
+#mainNav {
+    background-color: #2d0057;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#mainNav .navbar-brand {
+    color: #f0c040;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+}
+
+#mainNav .nav-link {
+    color: #e0d0f5;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+#mainNav .nav-link:hover {
+    color: #f0c040;
+}
+
+/* ===== MASTHEAD / HERO ===== */
+.masthead {
+    background: linear-gradient(135deg, #1a0035 0%, #4c1d95 50%, #2d0057 100%);
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masthead-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.masthead-subheading {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #d4b8ff;
+    letter-spacing: 0.12em;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    background-color: #f0c040;
+    border-color: #f0c040;
+    color: #1a0035;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background-color: #e5b030;
+    border-color: #e5b030;
+    color: #1a0035;
+}
+
+.btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+/* ===== DIVIDER ===== */
+.divider-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.divider-custom-line {
+    flex-grow: 1;
+    height: 3px;
+    background-color: #4c1d95;
+    max-width: 8rem;
+}
+
+.divider-light .divider-custom-line {
+    background-color: #d4b8ff;
+}
+
+.divider-custom-icon {
+    color: #f0c040;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+/* ===== PORTFOLIO / PAGES SECTION ===== */
+.portfolio {
+    padding: 5rem 0;
+    background-color: #f8f5ff;
+}
+
+.page-section-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d0057;
+    letter-spacing: 0.05em;
+}
+
+.portfolio-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(76, 29, 149, 0.15);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(76, 29, 149, 0.3);
+}
+
+.portfolio-item-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 29, 149, 0.92), rgba(45, 0, 87, 0.92));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.portfolio-item:hover .portfolio-item-caption {
+    opacity: 1;
+}
+
+.portfolio-card-body {
+    padding: 2.5rem 1.5rem;
+}
+
+.portfolio-icon {
+    font-size: 3rem;
+    color: #4c1d95;
+}
+
+/* ===== ABOUT SECTION ===== */
+.bg-dark {
+    background-color: #1a0035 !important;
+}
+
+/* ===== CONTACT SECTION ===== */
+.page-section {
+    padding: 5rem 0;
+}
+
+.form-control {
+    border-color: #4c1d95;
+}
+
+.form-control:focus {
+    border-color: #f0c040;
+    box-shadow: 0 0 0 0.2rem rgba(240, 192, 64, 0.3);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #1a0035;
+    padding: 4rem 0 2rem;
+}
+
+.footer h4 {
+    color: #f0c040;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+}
+
+.footer .lead {
+    color: #d4b8ff;
+}
+
+.btn-social {
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border-color: #f0c040;
+    color: #f0c040;
+}
+
+.btn-social:hover {
+    background-color: #f0c040;
+    color: #1a0035;
+}
+
+.copyright {
+    background-color: #0d001a;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* ===== TEXT COLORS ===== */
+.text-primary {
+    color: #4c1d95 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .masthead-heading {
+        font-size: 2.2rem;
+    }
+    .masthead-subheading {
+        font-size: 0.95rem;
+    }
+}

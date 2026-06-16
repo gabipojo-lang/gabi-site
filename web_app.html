@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Goal Setter - Gabriela Reis</title>
+    <style>
+        /* ===== GOAL SETTER APP STYLES ===== */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a0035 0%, #4c1d95 60%, #2d0057 100%);
+            min-height: 100vh;
+            padding: 0;
+            color: #1a0035;
+        }
+
+        /* Top nav */
+        .app-nav {
+            background-color: rgba(0,0,0,0.3);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .app-nav a {
+            color: #f0c040;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .app-nav a:hover { color: #ffffff; }
+        .app-nav span { color: rgba(255,255,255,0.3); }
+
+        /* App container */
+        .app-container {
+            max-width: 680px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .app-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #f0c040;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-header p {
+            color: #d4b8ff;
+            font-size: 1rem;
+        }
+
+        /* Progress bar */
+        .progress-card {
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #d4b8ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label span:last-child {
+            color: #f0c040;
+            font-weight: bold;
+        }
+
+        .progress-bar-bg {
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 10px;
+            background: linear-gradient(90deg, #f0c040, #ffdd80);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Input area */
+        .input-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .input-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4c1d95;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .input-row input {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border: 2px solid #e0d0f5;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #1a0035;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-row input:focus {
+            border-color: #4c1d95;
+        }
+
+        .input-row select {
+            padding: 0.7rem 0.8rem;
+            border: 2px solid #e0d0f5;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #4c1d95;
+            outline: none;
+            background: white;
+            cursor: pointer;
+        }
+
+        .input-row select:focus {
+            border-color: #4c1d95;
+        }
+
+        .btn-add {
+            padding: 0.7rem 1.2rem;
+            background-color: #4c1d95;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        .btn-add:hover { background-color: #3b0d6e; }
+        .btn-add:active { transform: scale(0.97); }
+
+        /* Category filter */
+        .filter-row {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 2px solid #e0d0f5;
+            background: white;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #4c1d95;
+            border-color: #4c1d95;
+            color: white;
+        }
+
+        /* Goals list */
+        .goals-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .goals-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4c1d95;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: #bbb;
+        }
+
+        .empty-state .emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .empty-state p { font-size: 0.9rem; }
+
+        /* Goal item */
+        .goal-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #f0ebff;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .goal-item:last-child { border-bottom: none; }
+
+        .goal-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #4c1d95;
+            border-radius: 50%;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .goal-checkbox.done {
+            background-color: #4c1d95;
+            border-color: #4c1d95;
+        }
+
+        .goal-checkbox.done::after {
+            content: '✓';
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .goal-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #1a0035;
+            transition: all 0.2s;
+        }
+
+        .goal-text.done {
+            text-decoration: line-through;
+            color: #bbb;
+        }
+
+        .goal-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .cat-career  { background: #ede9fe; color: #4c1d95; }
+        .cat-health  { background: #d1fae5; color: #065f46; }
+        .cat-learning{ background: #fef3c7; color: #92400e; }
+        .cat-personal{ background: #fce7f3; color: #9d174d; }
+
+        .btn-delete {
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.2rem;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .btn-delete:hover { color: #e53e3e; }
+
+        /* Motivational quote */
+        .quote-card {
+            background: rgba(240,192,64,0.15);
+            border-left: 4px solid #f0c040;
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.25rem;
+            margin-top: 1.5rem;
+            color: white;
+        }
+
+        .quote-card blockquote {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #f5e8b0;
+            margin: 0 0 0.4rem;
+        }
+
+        .quote-card cite {
+            font-size: 0.8rem;
+            color: #d4b8ff;
+        }
+
+        /* App footer */
+        .app-footer {
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.78rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .app-footer a { color: #f0c040; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="app-nav">
+        <a href="../index.html">&#8592; Home</a>
+        <span>|</span>
+        <a href="scratch_page.html">My Passion Project</a>
+        <span>|</span>
+        <a href="resume_page.html">My Resume</a>
+    </div>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <div class="app-header">
+            <h1>&#127919; Goal Setter</h1>
+            <p>Set your goals. Track your progress. Own your future.</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-card">
+            <div class="progress-label">
+                <span>Overall Progress</span>
+                <span id="progress-text">0 of 0 goals completed</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Add Goal -->
+        <div class="input-card">
+            <h3>Add a New Goal</h3>
+            <div class="input-row">
+                <input type="text" id="goal-input" placeholder="What do you want to achieve?" maxlength="120" />
+                <select id="category-select">
+                    <option value="career">Career</option>
+                    <option value="health">Health</option>
+                    <option value="learning">Learning</option>
+                    <option value="personal">Personal</option>
+                </select>
+                <button class="btn-add" onclick="addGoal()">+ Add</button>
+            </div>
+            <!-- Filter buttons -->
+            <div class="filter-row">
+                <button class="filter-btn active" onclick="filterGoals('all', this)">All</button>
+                <button class="filter-btn" onclick="filterGoals('career', this)">Career</button>
+                <button class="filter-btn" onclick="filterGoals('health', this)">Health</button>
+                <button class="filter-btn" onclick="filterGoals('learning', this)">Learning</button>
+                <button class="filter-btn" onclick="filterGoals('personal', this)">Personal</button>
+                <button class="filter-btn" onclick="filterGoals('done', this)">Completed</button>
+            </div>
+        </div>
+
+        <!-- Goals List -->
+        <div class="goals-card">
+            <h3>My Goals</h3>
+            <div id="goals-list">
+                <div class="empty-state">
+                    <div class="emoji">🎯</div>
+                    <p>No goals yet. Add one above to get started!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Motivational Quote -->
+        <div class="quote-card">
+            <blockquote id="quote-text">"The most effective way to do it, is to do it."</blockquote>
+            <cite>— <span id="quote-author">Amelia Earhart</span></cite>
+        </div>
+
+    </div>
+
+    <div class="app-footer">
+        Created with &#10084;&#65039; by <a href="../index.html">Gabriela Reis</a> &mdash; IS 501 Final Project
+    </div>
+
+    <script>
+        // ===== GOAL SETTER APP LOGIC =====
+
+        var goals = [];
+        var currentFilter = 'all';
+
+        var quotes = [
+            { text: "The most effective way to do it, is to do it.", author: "Amelia Earhart" },
+            { text: "A goal without a plan is just a wish.", author: "Antoine de Saint-Exupéry" },
+            { text: "You are never too old to set another goal or dream a new dream.", author: "C.S. Lewis" },
+            { text: "She believed she could, so she did.", author: "R.S. Grey" },
+            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+            { text: "Well-behaved women seldom make history.", author: "Laurel Thatcher Ulrich" },
+            { text: "Do one thing every day that scares you.", author: "Eleanor Roosevelt" }
+        ];
+
+        // Pick a random quote
+        function setQuote() {
+            var q = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote-text').textContent = '"' + q.text + '"';
+            document.getElementById('quote-author').textContent = q.author;
+        }
+
+        // Add a goal
+        function addGoal() {
+            var input = document.getElementById('goal-input');
+            var category = document.getElementById('category-select').value;
+            var text = input.value.trim();
+            if (!text) {
+                input.focus();
+                input.style.borderColor = '#e53e3e';
+                setTimeout(function() { input.style.borderColor = '#e0d0f5'; }, 1000);
+                return;
+            }
+            goals.push({ id: Date.now(), text: text, category: category, done: false });
+            input.value = '';
+            input.focus();
+            setQuote();
+            renderGoals();
+        }
+
+        // Toggle goal completion
+        function toggleGoal(id) {
+            goals = goals.map(function(g) {
+                if (g.id === id) return Object.assign({}, g, { done: !g.done });
+                return g;
+            });
+            renderGoals();
+        }
+
+        // Delete a goal
+        function deleteGoal(id) {
+            goals = goals.filter(function(g) { return g.id !== id; });
+            renderGoals();
+        }
+
+        // Filter goals
+        function filterGoals(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            renderGoals();
+        }
+
+        // Render goals list
+        function renderGoals() {
+            var list = document.getElementById('goals-list');
+            var filtered = goals.filter(function(g) {
+                if (currentFilter === 'all') return true;
+                if (currentFilter === 'done') return g.done;
+                return g.category === currentFilter;
+            });
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="emoji">' +
+                    (currentFilter === 'done' ? '🏆' : '🎯') +
+                    '</div><p>' +
+                    (currentFilter === 'done' ? 'No completed goals yet. Keep going!' : 'No goals in this category yet.') +
+                    '</p></div>';
+            } else {
+                list.innerHTML = filtered.map(function(g) {
+                    return '<div class="goal-item">' +
+                        '<div class="goal-checkbox ' + (g.done ? 'done' : '') + '" onclick="toggleGoal(' + g.id + ')"></div>' +
+                        '<div class="goal-text ' + (g.done ? 'done' : '') + '">' + escapeHtml(g.text) + '</div>' +
+                        '<span class="goal-category cat-' + g.category + '">' + g.category + '</span>' +
+                        '<button class="btn-delete" onclick="deleteGoal(' + g.id + ')" title="Delete goal">&times;</button>' +
+                        '</div>';
+                }).join('');
+            }
+
+            updateProgress();
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            var total = goals.length;
+            var done = goals.filter(function(g) { return g.done; }).length;
+            var pct = total === 0 ? 0 : Math.round((done / total) * 100);
+            document.getElementById('progress-fill').style.width = pct + '%';
+            document.getElementById('progress-text').textContent = done + ' of ' + total + ' goal' + (total !== 1 ? 's' : '') + ' completed';
+        }
+
+        // Escape HTML
+        function escapeHtml(str) {
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        // Allow Enter key to add goal
+        document.getElementById('goal-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') addGoal();
+        });
+
+        // Start
+        setQuote();
+        renderGoals();
+    </script>
+</body>
+</html>

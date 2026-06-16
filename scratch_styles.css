@@ -1,0 +1,232 @@
+/* ===== GABRIELA REIS - SCRATCH PAGE CUSTOM CSS (CSS2) ===== */
+
+/* 1. Font Family */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f0ff;
+    color: #1a0035;
+}
+
+/* 2. Font Color */
+p, li {
+    color: #2d1a4a;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Trebuchet MS', 'Arial', sans-serif;
+    color: #3b0d6e;
+}
+
+a {
+    color: #6b21a8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f0c040;
+    text-decoration: underline;
+}
+
+/* 3. Navigation div - positioning and styling */
+div.scratch-nav {
+    background-color: #1a0035;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+div.scratch-nav a {
+    color: #f0c040;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+div.scratch-nav a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 4. Hero section div - background image and positioning */
+div.hero-section {
+    background: linear-gradient(135deg, #2d0057 0%, #4c1d95 60%, #1a0035 100%);
+    color: white;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+div.hero-section h1 {
+    font-size: 2.8rem;
+    color: #f0c040;
+    text-shadow: 1px 2px 6px rgba(0,0,0,0.4);
+    margin-bottom: 1rem;
+}
+
+div.hero-section p {
+    color: #e0d0f5;
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 5. Content section div - layout and positioning */
+div.content-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(76, 29, 149, 0.1);
+}
+
+div.content-section h2 {
+    font-size: 1.6rem;
+    border-left: 4px solid #f0c040;
+    padding-left: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+/* 6. Sidebar/image div */
+div.image-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+div.image-block img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #4c1d95;
+    flex-shrink: 0;
+}
+
+div.image-block .image-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* 7. Video section div */
+div.video-section {
+    background-color: #f0ebff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+div.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+div.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 8. Tableau section div */
+div.tableau-section {
+    background-color: #1a0035;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+div.tableau-section h2 {
+    color: #f0c040;
+    border-left: 4px solid #f0c040;
+    padding-left: 0.75rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+div.tableau-section p {
+    color: #d4b8ff;
+    text-align: left;
+}
+
+/* 9. List styling */
+ol.main-list {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+ol.main-list > li {
+    color: #1a0035;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-bottom: 0.75rem;
+}
+
+ul.sub-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul.sub-list li {
+    font-weight: normal;
+    font-family: 'Georgia', serif;
+    color: #2d1a4a;
+    font-size: 0.9rem;
+}
+
+/* 10. Back to top button */
+a.back-to-top {
+    display: inline-block;
+    background-color: #4c1d95;
+    color: #f0c040;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-top: 1.5rem;
+}
+
+a.back-to-top:hover {
+    background-color: #f0c040;
+    color: #1a0035;
+    text-decoration: none;
+}
+
+/* 11. Footer */
+div.scratch-footer {
+    background-color: #1a0035;
+    color: #d4b8ff;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 0.85rem;
+    margin-top: 3rem;
+}

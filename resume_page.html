@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gabriela Reis - CV</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+    <!-- Custom CSS (CSS1 also applies here) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+        /* Resume-specific styles */
+        body { background-color: #f8f5ff; }
+
+        .resume-sidebar {
+            background: linear-gradient(160deg, #1a0035, #4c1d95);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        .resume-sidebar h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0c040;
+            margin-bottom: 0.25rem;
+        }
+
+        .resume-sidebar .subtitle {
+            font-size: 0.85rem;
+            color: #d4b8ff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #f0c040;
+            border-bottom: 1px solid rgba(240,192,64,0.4);
+            padding-bottom: 0.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-info {
+            font-size: 0.85rem;
+            color: #d4b8ff;
+            margin-bottom: 0.4rem;
+        }
+
+        .sidebar-info i {
+            width: 16px;
+            color: #f0c040;
+            margin-right: 0.5rem;
+        }
+
+        .skill-bar-label {
+            font-size: 0.82rem;
+            color: #d4b8ff;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-bar-bg {
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            height: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-bar-fill {
+            height: 8px;
+            background-color: #f0c040;
+            border-radius: 10px;
+        }
+
+        .language-tag {
+            display: inline-block;
+            background-color: rgba(240,192,64,0.2);
+            color: #f0c040;
+            border: 1px solid rgba(240,192,64,0.5);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            margin: 0.2rem;
+        }
+
+        /* Main content */
+        .resume-main {
+            padding: 2rem 2.5rem;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4c1d95;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-left: 4px solid #f0c040;
+            padding-left: 0.75rem;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .exp-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1a0035;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .exp-company {
+            color: #4c1d95;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .exp-item {
+            border-left: 2px solid #e0d0f5;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-item ul {
+            font-size: 0.875rem;
+            color: #444;
+            padding-left: 1rem;
+            margin-top: 0.4rem;
+        }
+
+        .exp-item ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #f0ebff;
+            color: #4c1d95;
+            border: 1px solid #d4b8ff;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            padding: 0.25rem 0.8rem;
+            margin: 0.2rem;
+            font-weight: 600;
+        }
+
+        .top-nav {
+            background-color: #2d0057;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .top-nav a {
+            color: #f0c040;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover { color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <div class="top-nav d-flex align-items-center">
+        <a href="../index.html"><i class="fas fa-arrow-left mr-2"></i> Home Page</a>
+        <span class="mx-3" style="color:#d4b8ff;">|</span>
+        <a href="scratch_page.html">My Passion Project</a>
+        <span class="mx-3" style="color:#d4b8ff;">|</span>
+        <a href="web_app.html">Goal Setter App</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 resume-sidebar">
+                <div class="text-center mb-3">
+                    <div style="width:100px;height:100px;background:rgba(240,192,64,0.2);border:3px solid #f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <i class="fas fa-user" style="font-size:2.5rem;color:#f0c040;"></i>
+                    </div>
+                    <h1>Gabriela Reis</h1>
+                    <p class="subtitle">Strategic Management · Marketing</p>
+                </div>
+
+                <div class="sidebar-section-title">Contact</div>
+                <p class="sidebar-info"><i class="fas fa-envelope"></i> gd368295@byu.edu</p>
+                <p class="sidebar-info"><i class="fas fa-phone"></i> (385) 472-3451</p>
+                <p class="sidebar-info"><i class="fas fa-map-marker-alt"></i> Provo, UT</p>
+                <p class="sidebar-info"><i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/gabriela-reis1" target="_blank" style="color:#d4b8ff;">linkedin.com/in/gabriela-reis1</a>
+                </p>
+
+                <div class="sidebar-section-title">Languages</div>
+                <span class="language-tag">Portuguese</span>
+                <span class="language-tag">English</span>
+                <span class="language-tag">Spanish</span>
+
+                <div class="sidebar-section-title">Technical Skills</div>
+                <div class="skill-bar-label">Microsoft Office Suite</div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%;"></div></div>
+                <div class="skill-bar-label">Social Media Marketing</div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%;"></div></div>
+                <div class="skill-bar-label">Customer Service</div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%;"></div></div>
+                <div class="skill-bar-label">Psychology &amp; Behavioral Analysis</div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%;"></div></div>
+
+                <div class="sidebar-section-title">Memberships</div>
+                <p class="sidebar-info" style="font-size:0.8rem;"><i class="fas fa-circle" style="font-size:0.5rem;margin-right:8px;"></i>Strategy Society — BYU</p>
+                <p class="sidebar-info" style="font-size:0.8rem;"><i class="fas fa-circle" style="font-size:0.5rem;margin-right:8px;"></i>Women in Strategy Association</p>
+                <p class="sidebar-info" style="font-size:0.8rem;"><i class="fas fa-circle" style="font-size:0.5rem;margin-right:8px;"></i>Management Consulting Association</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9 resume-main">
+
+                <!-- Education -->
+                <div class="section-title">Education</div>
+
+                <div class="edu-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">Bachelor of Science, Pre-Business — Strategic Management</div>
+                            <div class="exp-company">Brigham Young University · Provo, UT</div>
+                        </div>
+                        <div class="exp-date text-right">Sep 2025 – Expected Apr 2028</div>
+                    </div>
+                    <ul class="mt-2">
+                        <li>Strategy Society Member</li>
+                        <li>Women in Strategy Association Member</li>
+                        <li>Management Consulting Association Member (Case interview training &amp; consulting prep)</li>
+                    </ul>
+                </div>
+
+                <div class="edu-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">Associate of Science, Social Media Marketing</div>
+                            <div class="exp-company">Ensign College · Salt Lake City, UT</div>
+                        </div>
+                        <div class="exp-date text-right">Sep 2023 – Aug 2025</div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="section-title">Experience</div>
+
+                <div class="exp-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">Sales Representative</div>
+                            <div class="exp-company">Save The Girls · Salt Lake City, UT</div>
+                        </div>
+                        <div class="exp-date">Apr 2026 – Expected Aug 2026</div>
+                    </div>
+                    <ul>
+                        <li>Represented a women-owned consumer brand at high-traffic Costco roadshow events, engaging 100+ customers daily through live product demonstrations and persuasive sales pitches</li>
+                        <li>Managed on-site sales execution including customer objection handling, checkout, and booth presentation across multi-day events</li>
+                        <li>Invited to return for summer 2026 engagement, based on performance</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">International Services Specialist</div>
+                            <div class="exp-company">Ensign College Enrollment Services · Salt Lake City, UT</div>
+                        </div>
+                        <div class="exp-date">Jan 2024 – Oct 2024</div>
+                    </div>
+                    <ul>
+                        <li>Evaluated 300+ immigration documents, ensuring compliance with requirements</li>
+                        <li>Developed effective communication with 500+ international students about processes and status</li>
+                        <li>Maintained confidentiality and attention to detail with case management in 500+ student records</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">Volunteer</div>
+                            <div class="exp-company">NGO "Projeto RUAS" · Rio de Janeiro, Brazil</div>
+                        </div>
+                        <div class="exp-date">Jan 2021 – Feb 2022</div>
+                    </div>
+                    <ul>
+                        <li>Organized 50+ supplies for each of the weekly meetings for homeless individuals</li>
+                        <li>Distributed food and hygiene kits to 50+ homeless individuals weekly</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="exp-title">Mental Health Group Coordinator</div>
+                            <div class="exp-company">Fiocruz · Rio de Janeiro, Brazil</div>
+                        </div>
+                        <div class="exp-date">Mar 2019 – Mar 2020</div>
+                    </div>
+                    <ul>
+                        <li>Prepared meetings with 30+ students bi-weekly to create a safe environment on campus</li>
+                        <li>Recruited mental health professionals to give speeches to 30+ students for good mental health</li>
+                    </ul>
+                </div>
+
+                <!-- Skills -->
+                <div class="section-title">Skills &amp; Abilities</div>
+                <div>
+                    <span class="skill-tag">English · Portuguese · Spanish</span>
+                    <span class="skill-tag">Empathic Listener</span>
+                    <span class="skill-tag">Persuasive Speaker</span>
+                    <span class="skill-tag">Customer Service</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Organizational Skills</span>
+                    <span class="skill-tag">Psychology &amp; Behavioral Analysis</span>
+                    <span class="skill-tag">Microsoft Office Suite</span>
+                    <span class="skill-tag">Social Media Marketing</span>
+                    <span class="skill-tag">Case Interview Training</span>
+                    <span class="skill-tag">Strategic Management</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
