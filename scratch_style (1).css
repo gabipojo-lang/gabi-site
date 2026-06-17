@@ -1,0 +1,358 @@
+/* =============================================
+   Gabriela Reis — Women in Strategy Scratch Page
+   Custom Stylesheet
+   ============================================= */
+
+/* --- Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* --- CSS Variables / Color Palette --- */
+:root {
+  --green-deep: #1a3a2a;
+  --green-mid: #2d5a3d;
+  --green-soft: #3d7a52;
+  --ivory: #f5f0e8;
+  --ivory-dark: #e8e0d0;
+  --gold: #c9a84c;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f0e8;
+}
+
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--green-mid);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #3a3a3a;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* --- Navigation --- */
+.nav-bar {
+  background-color: var(--green-deep);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar .nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--ivory);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--ivory-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background-color: var(--green-deep);
+  background-image: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: var(--text-light);
+  padding: 6rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 2rem auto 0;
+}
+
+.hero-section h1 {
+  color: var(--ivory);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-section .subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 1.15rem;
+  color: var(--ivory-dark);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* --- Content Sections --- */
+.content-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* --- About / Image Block --- */
+.about-block {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-block img {
+  width: 280px;
+  height: 340px;
+  object-fit: cover;
+  border: 6px solid var(--ivory-dark);
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* --- Background Image Section --- */
+.quote-section {
+  background-color: var(--green-deep);
+  background-image: none;
+  color: var(--ivory);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.quote-section blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  max-width: 650px;
+  margin: 0 auto 1rem;
+  line-height: 1.4;
+  color: var(--ivory);
+}
+
+.quote-section cite {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --- Lists --- */
+.styled-list {
+  padding-left: 1.5rem;
+}
+
+.styled-list li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #3a3a3a;
+}
+
+.styled-list li ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.styled-list li ul li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- Divider --- */
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 1.5rem 0;
+}
+
+/* --- Video Block --- */
+.video-block {
+  background-color: var(--green-deep);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.video-block h2 {
+  color: var(--ivory);
+  margin-bottom: 0.5rem;
+}
+
+.video-block .section-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.video-block p {
+  color: var(--ivory-dark);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.video-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- Tableau Block --- */
+.tableau-block {
+  padding: 4rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tableau-wrapper {
+  margin-top: 1.5rem;
+  border: 1px solid var(--ivory-dark);
+}
+
+/* --- Web App Link --- */
+.app-block {
+  background-color: var(--ivory-dark);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.app-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.5rem;
+  background-color: var(--green-deep);
+  color: var(--ivory);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.app-btn:hover {
+  background-color: var(--green-soft);
+  color: var(--ivory);
+}
+
+/* --- Back to Top --- */
+.back-top {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--green-deep);
+}
+
+.back-top a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.back-top a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #111;
+  color: var(--ivory-dark);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  h1 { font-size: 2rem; }
+  .about-block { flex-direction: column; }
+  .about-block img { width: 100%; height: 260px; }
+  .nav-links { gap: 1rem; }
+  .nav-bar { flex-direction: column; gap: 0.8rem; }
+}
